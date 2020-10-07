@@ -10,27 +10,22 @@ package TrabajoPracticoRendezvous.Objetos;
  * @author Leo
  */
 public class Mozo extends Persona implements Runnable {
-    private MesaConfiteria mesa;
-    private Cocina cocina;
+    private MesaComedor mesa;
+    private MesaComedor mesaB;
     
-    public Mozo(String nombreApellido, MesaConfiteria mesa, Cocina cocina) {
+    public Mozo(String nombreApellido, MesaComedor mesa, MesaComedor mesaB) {
         super(nombreApellido);
         this.mesa = mesa;
-        this.cocina = cocina;
+        this.mesaB = mesaB;
     }
 
     @Override
     public void run() {
-        mesa.buscarBebida();
-        System.out.println("El mozo busca la bebida para el empleado");
-        System.out.println("El mozo sirve la bebida");
-        mesa.servirBebida();
-        System.out.println("Ahora el mozo va a la cocina y entrega el pedido al cocinero");
-        cocina.darPedido();
-        cocina.retirarPlato();
-        System.out.println("El mozo retira el plato de la cocina y se lo lleva al empleado");
-        mesa.servirComida();
-        System.out.println("El mozo vuelve a su hobby");
+            System.out.println("El mozo realiza su hobby mientras espera...");
+            mesa.servirBebida();
+            System.out.println("El mozo realiza su hobby mientras espera...");
+            mesaB.servirBebida();
+            System.out.println("El mozo realiza su hobby mientras espera...");
     }
     
 }

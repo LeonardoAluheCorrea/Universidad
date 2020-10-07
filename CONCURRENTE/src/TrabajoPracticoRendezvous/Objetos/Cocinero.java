@@ -10,18 +10,21 @@ package TrabajoPracticoRendezvous.Objetos;
  * @author Leo
  */
 public class Cocinero extends Persona implements Runnable{
-    private Cocina cocina;
+    private MesaComedor mesa;
+    private MesaComedor mesaB;
     
-    public Cocinero(String nombreApellido, Cocina cocina) {
+    public Cocinero(String nombreApellido, MesaComedor mesa, MesaComedor mesaB) {
         super(nombreApellido);
-        this.cocina = cocina;
+        this.mesa = mesa;
+        this.mesaB = mesaB;
     }
 
     @Override
     public void run() {
-        System.out.println("El cocinero espera que el mozo le entregue un pedido");
-        cocina.cocinar();
-        System.out.println("El cocinero continua esperando");
+            System.out.println("El cocinero ordena su cocina mientras espera...");
+            mesa.servirComida();
+            System.out.println("El cocinero ordena su cocina mientras espera...");
+            mesaB.servirComida();
     }
     
 }
